@@ -11,9 +11,19 @@
 
         public abstract string FormatText();
 
-        public string FormatText(string text)
+        public IFormatting GetChild()
         {
-            return $"{text}{_wrappee.FormatText()}";
+            return _wrappee;
+        }
+
+        public void RemoveChild(IFormatting child)
+        {
+            Console.WriteLine();
+
+            if (_wrappee.GetType().Equals(child.GetType()))
+            {
+                _wrappee = _wrappee.GetChild();
+            }
         }
     }
 }

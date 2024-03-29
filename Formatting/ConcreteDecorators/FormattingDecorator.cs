@@ -13,5 +13,10 @@
         {
             return Text;
         }
+
+        public IFormatting GetChild()
+        {
+            return null;
+        }
     }
 }
