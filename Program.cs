@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using _16._Structural_Design_Patterns.Formatting.ConcreteDecorators;
+
+var textDecorator = new FormattingDecorator("Hello, world!");
+
+var boldDecorator = new BoldFormattingDecorator(textDecorator);
+
+var colorDecorator = new ColorFormattingDecorator(boldDecorator, "yellow");
+
+Console.WriteLine(colorDecorator.FormatText());
